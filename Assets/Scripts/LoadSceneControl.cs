@@ -5,40 +5,41 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneControl : MonoBehaviour
 {
-    // load LevelList page
-    public void LoadLevelList()
+    // load PuzzleList page
+    public void LoadPuzzleList()
     {
-        SceneManager.LoadScene("LevelList");
+        SceneManager.LoadScene("1.PuzzleList");
     }
 
-
-    //load level intro scene
-    public void LoadLevel(int levelIndex)
+    // load PuzzleSizeOption page
+    public void LoadPuzzleSizeOption()
     {
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene("2.PuzzleSizeOption");
     }
 
-    //From level intro scene, start level main scene
-    public void StartGame()
+    //load puzzle intro page
+    public void LoadPuzzleIntro()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene("3.PuzzleIntro");
+    }
+
+    //load puzzle play page
+    public void LoadPuzzlePlay()
+    {
+        SceneManager.LoadScene("4.PuzzlePlay");
     }
 
     //load main menu page
-
     public void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
     }
-
 
     //exit game
     public void Quit()
     {
 
     }
-
-
 
     //Play again
     public void PlayAgain()

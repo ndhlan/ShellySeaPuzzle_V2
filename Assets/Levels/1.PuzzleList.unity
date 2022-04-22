@@ -516,6 +516,7 @@ GameObject:
   - component: {fileID: 291756918}
   - component: {fileID: 291756920}
   - component: {fileID: 291756919}
+  - component: {fileID: 291756922}
   - component: {fileID: 291756921}
   m_Layer: 5
   m_Name: Puzzle10
@@ -581,7 +582,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 291756917}
   m_CullTransparentMesh: 1
---- !u!61 &291756921
+--- !u!114 &291756921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291756917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 10
+--- !u!61 &291756922
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -618,6 +632,7 @@ GameObject:
   - component: {fileID: 323846694}
   - component: {fileID: 323846696}
   - component: {fileID: 323846695}
+  - component: {fileID: 323846698}
   - component: {fileID: 323846697}
   m_Layer: 5
   m_Name: Puzzle13
@@ -683,7 +698,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323846693}
   m_CullTransparentMesh: 1
---- !u!61 &323846697
+--- !u!114 &323846697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 323846693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 13
+--- !u!61 &323846698
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -720,6 +748,7 @@ GameObject:
   - component: {fileID: 426382426}
   - component: {fileID: 426382428}
   - component: {fileID: 426382427}
+  - component: {fileID: 426382430}
   - component: {fileID: 426382429}
   m_Layer: 5
   m_Name: Puzzle15
@@ -785,7 +814,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 426382425}
   m_CullTransparentMesh: 1
---- !u!61 &426382429
+--- !u!114 &426382429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 426382425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 15
+--- !u!61 &426382430
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -822,6 +864,7 @@ GameObject:
   - component: {fileID: 476006038}
   - component: {fileID: 476006040}
   - component: {fileID: 476006039}
+  - component: {fileID: 476006042}
   - component: {fileID: 476006041}
   m_Layer: 5
   m_Name: Puzzle4
@@ -887,7 +930,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 476006037}
   m_CullTransparentMesh: 1
---- !u!61 &476006041
+--- !u!114 &476006041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 476006037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 4
+--- !u!61 &476006042
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -929,6 +985,7 @@ GameObject:
   - component: {fileID: 715885163}
   - component: {fileID: 715885165}
   - component: {fileID: 715885164}
+  - component: {fileID: 715885167}
   - component: {fileID: 715885166}
   m_Layer: 5
   m_Name: Puzzle8
@@ -994,7 +1051,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715885162}
   m_CullTransparentMesh: 1
---- !u!61 &715885166
+--- !u!114 &715885166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715885162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 8
+--- !u!61 &715885167
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1031,6 +1101,7 @@ GameObject:
   - component: {fileID: 746866694}
   - component: {fileID: 746866696}
   - component: {fileID: 746866695}
+  - component: {fileID: 746866698}
   - component: {fileID: 746866697}
   m_Layer: 5
   m_Name: Puzzle12
@@ -1096,7 +1167,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 746866693}
   m_CullTransparentMesh: 1
---- !u!61 &746866697
+--- !u!114 &746866697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 746866693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 12
+--- !u!61 &746866698
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,6 +1366,7 @@ GameObject:
   - component: {fileID: 1080424533}
   - component: {fileID: 1080424535}
   - component: {fileID: 1080424534}
+  - component: {fileID: 1080424537}
   - component: {fileID: 1080424536}
   m_Layer: 5
   m_Name: Puzzle7
@@ -1347,7 +1432,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080424532}
   m_CullTransparentMesh: 1
---- !u!61 &1080424536
+--- !u!114 &1080424536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1080424532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 7
+--- !u!61 &1080424537
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1475,6 +1573,7 @@ GameObject:
   - component: {fileID: 1258789158}
   - component: {fileID: 1258789160}
   - component: {fileID: 1258789159}
+  - component: {fileID: 1258789162}
   - component: {fileID: 1258789161}
   m_Layer: 5
   m_Name: Puzzle5
@@ -1540,7 +1639,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1258789157}
   m_CullTransparentMesh: 1
---- !u!61 &1258789161
+--- !u!114 &1258789161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258789157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 5
+--- !u!61 &1258789162
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1656,6 +1768,7 @@ GameObject:
   - component: {fileID: 1419668898}
   - component: {fileID: 1419668900}
   - component: {fileID: 1419668899}
+  - component: {fileID: 1419668902}
   - component: {fileID: 1419668901}
   m_Layer: 5
   m_Name: Puzzle1
@@ -1721,7 +1834,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1419668897}
   m_CullTransparentMesh: 1
---- !u!61 &1419668901
+--- !u!114 &1419668901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419668897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 1
+--- !u!61 &1419668902
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1758,6 +1884,7 @@ GameObject:
   - component: {fileID: 1424766885}
   - component: {fileID: 1424766887}
   - component: {fileID: 1424766886}
+  - component: {fileID: 1424766889}
   - component: {fileID: 1424766888}
   m_Layer: 5
   m_Name: Puzzle3
@@ -1823,7 +1950,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1424766884}
   m_CullTransparentMesh: 1
---- !u!61 &1424766888
+--- !u!114 &1424766888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1424766884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 3
+--- !u!61 &1424766889
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2123,6 +2263,7 @@ GameObject:
   - component: {fileID: 1532959411}
   - component: {fileID: 1532959413}
   - component: {fileID: 1532959412}
+  - component: {fileID: 1532959415}
   - component: {fileID: 1532959414}
   m_Layer: 5
   m_Name: Puzzle18
@@ -2188,7 +2329,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532959410}
   m_CullTransparentMesh: 1
---- !u!61 &1532959414
+--- !u!114 &1532959414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1532959410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 18
+--- !u!61 &1532959415
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2261,7 +2415,8 @@ GameObject:
   - component: {fileID: 1640790604}
   - component: {fileID: 1640790606}
   - component: {fileID: 1640790605}
-  - component: {fileID: 1640790607}
+  - component: {fileID: 1640790608}
+  - component: {fileID: 1640790609}
   m_Layer: 5
   m_Name: Puzzle2
   m_TagString: Untagged
@@ -2326,7 +2481,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1640790603}
   m_CullTransparentMesh: 1
---- !u!61 &1640790607
+--- !u!61 &1640790608
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2352,6 +2507,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1640790609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1640790603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 2
 --- !u!1 &1650141026
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,6 +2531,7 @@ GameObject:
   - component: {fileID: 1650141027}
   - component: {fileID: 1650141029}
   - component: {fileID: 1650141028}
+  - component: {fileID: 1650141031}
   - component: {fileID: 1650141030}
   m_Layer: 5
   m_Name: Puzzle17
@@ -2428,7 +2597,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1650141026}
   m_CullTransparentMesh: 1
---- !u!61 &1650141030
+--- !u!114 &1650141030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1650141026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 17
+--- !u!61 &1650141031
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2465,6 +2647,7 @@ GameObject:
   - component: {fileID: 1703703981}
   - component: {fileID: 1703703983}
   - component: {fileID: 1703703982}
+  - component: {fileID: 1703703985}
   - component: {fileID: 1703703984}
   m_Layer: 5
   m_Name: Puzzle16
@@ -2530,7 +2713,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1703703980}
   m_CullTransparentMesh: 1
---- !u!61 &1703703984
+--- !u!114 &1703703984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1703703980}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 16
+--- !u!61 &1703703985
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2567,6 +2763,7 @@ GameObject:
   - component: {fileID: 1832538102}
   - component: {fileID: 1832538104}
   - component: {fileID: 1832538103}
+  - component: {fileID: 1832538106}
   - component: {fileID: 1832538105}
   m_Layer: 5
   m_Name: Puzzle11
@@ -2632,7 +2829,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1832538101}
   m_CullTransparentMesh: 1
---- !u!61 &1832538105
+--- !u!114 &1832538105
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1832538101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 11
+--- !u!61 &1832538106
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2669,6 +2879,7 @@ GameObject:
   - component: {fileID: 1896239455}
   - component: {fileID: 1896239457}
   - component: {fileID: 1896239456}
+  - component: {fileID: 1896239459}
   - component: {fileID: 1896239458}
   m_Layer: 5
   m_Name: Puzzle9
@@ -2734,7 +2945,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1896239454}
   m_CullTransparentMesh: 1
---- !u!61 &1896239458
+--- !u!114 &1896239458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896239454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 9
+--- !u!61 &1896239459
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2771,6 +2995,7 @@ GameObject:
   - component: {fileID: 1906200057}
   - component: {fileID: 1906200059}
   - component: {fileID: 1906200058}
+  - component: {fileID: 1906200061}
   - component: {fileID: 1906200060}
   m_Layer: 5
   m_Name: Puzzle6
@@ -2836,7 +3061,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1906200056}
   m_CullTransparentMesh: 1
---- !u!61 &1906200060
+--- !u!114 &1906200060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906200056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 6
+--- !u!61 &1906200061
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2873,6 +3111,7 @@ GameObject:
   - component: {fileID: 1928273786}
   - component: {fileID: 1928273788}
   - component: {fileID: 1928273787}
+  - component: {fileID: 1928273790}
   - component: {fileID: 1928273789}
   m_Layer: 5
   m_Name: Puzzle14
@@ -2938,7 +3177,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928273785}
   m_CullTransparentMesh: 1
---- !u!61 &1928273789
+--- !u!114 &1928273789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1928273785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab1bab2f309e1f47b44f0adeebd4f50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  puzzleIndex: 14
+--- !u!61 &1928273790
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3287,7 +3539,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Click your favourite image to start.
+  m_Text: Choose your favourite image to start.
 --- !u!222 &2143914327
 CanvasRenderer:
   m_ObjectHideFlags: 0
