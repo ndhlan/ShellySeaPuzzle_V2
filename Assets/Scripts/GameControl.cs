@@ -42,7 +42,7 @@ public class GameControl : MonoBehaviour
     private readonly float durationSize3 = 30f;
     private readonly float durationSize4 = 45f;
 
-    private readonly float imageSize = 1090f;
+    private readonly float imageSize = 1080f;
 
     private int puzzleIndex;
     private int puzzleSize;

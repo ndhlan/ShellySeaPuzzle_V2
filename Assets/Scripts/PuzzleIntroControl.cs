@@ -11,6 +11,7 @@ public class PuzzleIntroControl : MonoBehaviour
     Texture2D puzzle;
     string DYKText;
     Sound DYKVoice;
+    private readonly float imageSize = 1080f;
 
     // Start is called before the first frame update
     void Start()
@@ -22,7 +23,7 @@ public class PuzzleIntroControl : MonoBehaviour
         puzzle = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex+".png", typeof(Texture2D));
 
         //display puzzle to PuzzleField
-        Sprite newSprite = Sprite.Create(puzzle, new Rect(0, 0, 1090, 1090), new Vector2(0.5f, 0.5f));
+        Sprite newSprite = Sprite.Create(puzzle, new Rect(0, 0, imageSize, imageSize), new Vector2(0.5f, 0.5f));
         GameObject n = new GameObject();
         n.AddComponent<SpriteRenderer>();
         SpriteRenderer sr = n.GetComponent<SpriteRenderer>();
