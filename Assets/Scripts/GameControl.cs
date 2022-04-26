@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 
 public class GameControl : MonoBehaviour
 {
-    [SerializeField]
-    private Transform[] pictures;
+
+    private GameObject[] pieces;
 
     [SerializeField]
     private GameObject endGamePopUp;
@@ -21,7 +21,7 @@ public class GameControl : MonoBehaviour
     private GameObject timesupPanel;
 
     [SerializeField]
-    private GameObject guidanceText;
+    private GameObject thumbnail;
 
     [SerializeField]
     private Button backButton;
@@ -36,7 +36,16 @@ public class GameControl : MonoBehaviour
     private GameObject timeField;
 
     private float currentTime = 0f;
-    private float startingTime = 30f;
+    private float startingTime;
+
+    private readonly float durationSize2 = 15f;
+    private readonly float durationSize3 = 30f;
+    private readonly float durationSize4 = 45f;
+
+    private readonly float imageSize = 1090f;
+
+    private int puzzleIndex;
+    private int puzzleSize;
 
     public static bool isWin;
     public static bool isTimesup;
@@ -45,6 +54,25 @@ public class GameControl : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Get puzzle index
+        puzzleIndex = PlayerPrefs.GetInt("PuzzleIndex", 1);
+        Debug.Log("Index " + puzzleIndex);
+
+        //Get puzzle size
+        puzzleSize = PlayerPrefs.GetInt("PuzzleSize", 1);
+        Debug.Log("Size " + puzzleSize);
+
+        //Initialize puzzle pieces
+        InitializePuzzlePieces();
+
+        //Split image and display to puzzle field
+        SplitPuzzleImage();
+
+        //random rotate pieces
+        randomRotatePieces();
+
+        //Set startingTime based on Puzzle size
+        SetStartingTime(puzzleSize);
 
         //Set End game pop up off
         endGamePopUp.SetActive(false);
@@ -57,8 +85,8 @@ public class GameControl : MonoBehaviour
         timesupPanel.SetActive(false);
         isTimesup = false;
 
-        //Set guidance Text on
-        guidanceText.SetActive(true);
+        ////Set guidance Text on
+        //guidanceText.SetActive(true);
 
         //set current time
         currentTime = startingTime;
@@ -83,31 +111,53 @@ public class GameControl : MonoBehaviour
 
                 // play GameWin sound effect
                 FindObjectOfType<AudioControl>().Play("GameWin");
-
             }
-
         }
-
-
     }
 
+    void InitializePuzzlePieces()
+    {
+        int piecesNumber = puzzleSize * puzzleSize;
 
+        pieces = new GameObject[piecesNumber];
+    }
 
     bool CheckWinStatus()
     {
         bool isRotationZCorrect = true;
 
-        //loop through all pieces, if any piece's rotation z is not 0, then isRotationZCorrect is false
-        for (int i = 0; i < pictures.Length; i++)
+        Quaternion correctRotation = Quaternion.Euler(0f, 0f, 0f);
+
+        //loop through all pieces, check if the angle between correct z direction and current z direction > 0.001 ==> not in correct direction
+        for (int i = 0; i < pieces.Length; i++)
         {
-            if (pictures[i].rotation.z != 0)
+            Quaternion currentRotation = Quaternion.Euler(pieces[i].transform.eulerAngles);
+
+            float angle = Quaternion.Angle(correctRotation, currentRotation);
+
+            if (Mathf.Abs(angle) > 1e-3f)
             {
                 isRotationZCorrect = false;
             }
-            
         }
 
         return isRotationZCorrect;
+    }
+
+    void SetStartingTime(int puzzleSize)
+    {
+        if (puzzleSize == 2)
+        {
+            startingTime = durationSize2;
+        }
+        else if (puzzleSize == 3)
+        {
+            startingTime = durationSize3;
+        }
+        else
+        {
+            startingTime = durationSize4;
+        }
     }
 
 
@@ -144,6 +194,56 @@ public class GameControl : MonoBehaviour
         
     }
 
+
+    void SplitPuzzleImage()
+    {
+        Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+        float pieceSize = imageSize / puzzleSize;
+
+        for (int i = 0; i < puzzleSize; i++)
+        {
+            for (int j = 0; j < puzzleSize; j++)
+            {
+                Sprite newSprite = Sprite.Create(imgTexture, new Rect(i * pieceSize, j * pieceSize, pieceSize, pieceSize), new Vector2(0.5f, 0.5f));
+                GameObject n = new GameObject();
+                n.AddComponent<SpriteRenderer>();
+                SpriteRenderer sr = n.GetComponent<SpriteRenderer>();
+                sr.sprite = newSprite;
+                sr.sortingOrder = 1;
+                n.AddComponent<BoxCollider2D>();
+                n.AddComponent<TouchRotate>();
+                n.transform.parent = GameObject.Find("PuzzleField").transform;
+                
+                Vector3 positionOffset = new Vector3((imageSize/ 2) - (pieceSize / 2), (imageSize / 2) - (pieceSize / 2), 0);
+                Vector3 localScale = new Vector3(100, 100, 100);
+                n.transform.localPosition = new Vector3(i * pieceSize, j * pieceSize, 0) - positionOffset;
+                n.transform.localScale = localScale;
+                n.SetActive(true);
+
+                pieces[i * puzzleSize + j] = n;
+
+                pieces[i * puzzleSize + j].name = (i * puzzleSize + j).ToString();
+
+            }
+        }
+    }
+
+
+    void randomRotatePieces()
+    {
+        for (int i = 0; i < pieces.Length; i++)
+        {
+            Vector3 randomRotation = new Vector3(0, 0, Random.Range(1, 4) * 90);
+
+            pieces[i].transform.eulerAngles = randomRotation;
+
+        }
+    }
+
+
+
+
+
     void WinDisplay()
     {
         EndGamePopUpDisplay();
@@ -166,7 +266,7 @@ public class GameControl : MonoBehaviour
 
     void EndGamePopUpDisplay()
     {
-        guidanceText.SetActive(false);
+        //guidanceText.SetActive(false);
         timesupPanel.SetActive(false);
         timeField.SetActive(false);
 
@@ -192,5 +292,12 @@ public class GameControl : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         
     }
+
+
+
+
+
+
+
 
 }
