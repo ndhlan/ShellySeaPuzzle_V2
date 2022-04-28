@@ -38,7 +38,7 @@ public class LoadSceneControl : MonoBehaviour
     //exit game
     public void Quit()
     {
-
+        this.Quit();
     }
 
     //Play again

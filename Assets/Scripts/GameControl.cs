@@ -69,7 +69,10 @@ public class GameControl : MonoBehaviour
         SplitPuzzleImage();
 
         //random rotate pieces
-        randomRotatePieces();
+        RandomRotatePieces();
+
+        //display Thumbnail
+        ThumbnailDisplay();
 
         //Set startingTime based on Puzzle size
         SetStartingTime(puzzleSize);
@@ -229,7 +232,7 @@ public class GameControl : MonoBehaviour
     }
 
 
-    void randomRotatePieces()
+    void RandomRotatePieces()
     {
         for (int i = 0; i < pieces.Length; i++)
         {
@@ -238,6 +241,26 @@ public class GameControl : MonoBehaviour
             pieces[i].transform.eulerAngles = randomRotation;
 
         }
+    }
+
+
+    void ThumbnailDisplay()
+    {
+        //Find puzzle based on puzzle index
+        Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+
+        //display puzzle to PuzzleField
+        Sprite newSprite = Sprite.Create(imgTexture, new Rect(0, 0, imageSize, imageSize), new Vector2(0.5f, 0.5f));
+        GameObject n = new GameObject();
+        n.AddComponent<SpriteRenderer>();
+        SpriteRenderer sr = n.GetComponent<SpriteRenderer>();
+        sr.sprite = newSprite;
+        sr.sortingOrder = 1;
+        n.transform.parent = GameObject.Find("Thumbnail").transform;
+        Vector3 localScale = new Vector3(30, 30, 30);
+        n.transform.localPosition = new Vector3(0, 0, 0);
+        n.transform.localScale = localScale;
+        n.SetActive(true);
     }
 
 
