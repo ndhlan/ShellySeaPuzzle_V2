@@ -6,43 +6,43 @@ using UnityEngine.SceneManagement;
 public class LoadSceneControl : MonoBehaviour
 {
     // load PuzzleList page
-    public void LoadPuzzleList()
+    public static void LoadPuzzleList()
     {
         SceneManager.LoadScene("1.PuzzleList");
     }
 
     // load PuzzleSizeOption page
-    public void LoadPuzzleSizeOption()
+    public static void LoadPuzzleSizeOption()
     {
         SceneManager.LoadScene("2.PuzzleSizeOption");
     }
 
     //load puzzle intro page
-    public void LoadPuzzleIntro()
+    public static void LoadPuzzleIntro()
     {
         SceneManager.LoadScene("3.PuzzleIntro");
     }
 
     //load puzzle play page
-    public void LoadPuzzlePlay()
+    public static void LoadPuzzlePlay()
     {
         SceneManager.LoadScene("4.PuzzlePlay");
     }
 
     //load main menu page
-    public void LoadMenu()
+    public static void LoadMenu()
     {
         SceneManager.LoadScene("Menu");
     }
 
     //exit game
-    public void Quit()
+    public static void Quit()
     {
-        this.Quit();
+        Application.Quit();
     }
 
     //Play again
-    public void PlayAgain()
+    public static void PlayAgain()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }

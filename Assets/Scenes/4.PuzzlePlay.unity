@@ -663,17 +663,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6079981844511808458, guid: 82fa605888071654e87c78bb45755de3, type: 3}
   m_PrefabInstance: {fileID: 633738366}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &633738368 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6079981844511808459, guid: 82fa605888071654e87c78bb45755de3, type: 3}
-  m_PrefabInstance: {fileID: 633738366}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &663462485
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1434,7 +1423,7 @@ MonoBehaviour:
   winPanel: {fileID: 33182530}
   timesupPanel: {fileID: 1958138862}
   thumbnail: {fileID: 0}
-  backButton: {fileID: 633738368}
+  backButton: {fileID: 1222009307}
   playAgainButton: {fileID: 1494215195}
   timeCounterText: {fileID: 1577154216}
   timeField: {fileID: 1426600231}
@@ -1464,7 +1453,6 @@ GameObject:
   - component: {fileID: 1222009309}
   - component: {fileID: 1222009308}
   - component: {fileID: 1222009307}
-  - component: {fileID: 1222009306}
   m_Layer: 5
   m_Name: BackButton
   m_TagString: Untagged
@@ -1491,18 +1479,6 @@ RectTransform:
   m_AnchoredPosition: {x: -149, y: -247}
   m_SizeDelta: {x: 180, y: 180}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1222009306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1222009304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efdd60d9369206489e2216ae2b28725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1222009307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1546,19 +1522,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1222009308}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1222009306}
-        m_TargetAssemblyTypeName: LoadSceneControl, Assembly-CSharp
-        m_MethodName: LoadPuzzleList
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1222009308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1918,7 +1882,6 @@ GameObject:
   - component: {fileID: 1494215197}
   - component: {fileID: 1494215196}
   - component: {fileID: 1494215195}
-  - component: {fileID: 1494215194}
   m_Layer: 5
   m_Name: PlayAgainButton
   m_TagString: Untagged
@@ -1926,18 +1889,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1494215194
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1494215193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3efdd60d9369206489e2216ae2b28725, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1494215195
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1981,19 +1932,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1494215196}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1494215194}
-        m_TargetAssemblyTypeName: LoadSceneControl, Assembly-CSharp
-        m_MethodName: PlayAgain
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1494215196
 MonoBehaviour:
   m_ObjectHideFlags: 0

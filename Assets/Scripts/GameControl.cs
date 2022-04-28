@@ -56,11 +56,9 @@ public class GameControl : MonoBehaviour
     {
         //Get puzzle index
         puzzleIndex = PlayerPrefs.GetInt("PuzzleIndex", 1);
-        Debug.Log("Index " + puzzleIndex);
 
         //Get puzzle size
-        puzzleSize = PlayerPrefs.GetInt("PuzzleSize", 1);
-        Debug.Log("Size " + puzzleSize);
+        puzzleSize = PlayerPrefs.GetInt("PuzzleSize", 2);
 
         //Initialize puzzle pieces
         InitializePuzzlePieces();
@@ -226,7 +224,6 @@ public class GameControl : MonoBehaviour
                 pieces[i * puzzleSize + j] = n;
 
                 pieces[i * puzzleSize + j].name = (i * puzzleSize + j).ToString();
-
             }
         }
     }
@@ -239,7 +236,6 @@ public class GameControl : MonoBehaviour
             Vector3 randomRotation = new Vector3(0, 0, Random.Range(1, 4) * 90);
 
             pieces[i].transform.eulerAngles = randomRotation;
-
         }
     }
 
@@ -265,8 +261,6 @@ public class GameControl : MonoBehaviour
 
 
 
-
-
     void WinDisplay()
     {
         EndGamePopUpDisplay();
@@ -281,6 +275,7 @@ public class GameControl : MonoBehaviour
         EndGamePopUpDisplay();
 
         winPanel.SetActive(false);
+
         timesupPanel.SetActive(true);        
 
         //FindObjectOfType<AudioControl>().Play("Timesup");       
@@ -304,16 +299,14 @@ public class GameControl : MonoBehaviour
     {
         FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        SceneManager.LoadScene("LevelList");
-                
+        LoadSceneControl.LoadPuzzleList();
     }
 
     void PlayAgainButtonOnClick()
     {
         FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
 
 

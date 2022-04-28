@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 
 
@@ -23,7 +22,7 @@ public class MainMenuSettings : MonoBehaviour
 
     private Button instructionsButton;
 
-    private Button levelsButton;
+    private Button playButton;
 
     private Button creditsButton;
 
@@ -46,7 +45,7 @@ public class MainMenuSettings : MonoBehaviour
 
         volumeButton = GameObject.Find("VolumeButton").GetComponent<Button>();
         instructionsButton = GameObject.Find("InstructionsButton").GetComponent<Button>();
-        levelsButton = GameObject.Find("LevelsButton").GetComponent<Button>();
+        playButton = GameObject.Find("PlayButton").GetComponent<Button>();
         creditsButton = GameObject.Find("CreditsButton").GetComponent<Button>();
 
 
@@ -66,7 +65,7 @@ public class MainMenuSettings : MonoBehaviour
 
 
         //set on click listener to buttons
-        levelsButton.onClick.AddListener(LevelsButtonOnClick);
+        playButton.onClick.AddListener(PlayButtonOnClick);
 
         instructionsButton.onClick.AddListener(InstructionsButtonOnClick);        
         instructionsBackButton.onClick.AddListener(InstructionsBackButtonOnClick);
@@ -124,11 +123,11 @@ public class MainMenuSettings : MonoBehaviour
 
     // buttons onclick 
 
-    void LevelsButtonOnClick()
+    void PlayButtonOnClick()
     {      
         FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        SceneManager.LoadScene("LevelList");        
+        LoadSceneControl.LoadPuzzleList();
     }
 
 
