@@ -10,11 +10,11 @@ public class DidYouKnowText
     readonly string DYKText4 = "That it takes 450 years to take a bottle of plastic to degrade into the ocean.";
     readonly string DYKText5 = "That 200,000 tons of plastic straws flow into our oceans each year.";
     readonly string DYKText6 = "That 31,000 balloons enter the oceans around the U.S. each year.";
-    readonly string DYKText7 = "";
-    readonly string DYKText8 = "";
-    readonly string DYKText9 = "";
-    readonly string DYKText10 = "";
-    readonly string DYKText11 = "";
+    readonly string DYKText7 = "More than 700 different species of marine animals have been found with ingested plastic.";
+    readonly string DYKText8 = "Single use plastic bags take 1,000 years to decompose.";
+    readonly string DYKText9 = "When plastic is not recycled, it makes its way into the ocean, harming and endangering marine animals.";
+    readonly string DYKText10 = "The sun and wave break plastic into pieces, which are then eaten by many fish species.";
+    readonly string DYKText11 = "Each person uses around 300 toothbrushes during their lifetime, adding 175 feet of plastic to the environment.";
     readonly string DYKText12 = "";
     readonly string DYKText13 = "";
     readonly string DYKText14 = "";
