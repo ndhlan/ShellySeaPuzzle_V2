@@ -11,22 +11,17 @@ public class AudioControl : MonoBehaviour
 
     public Sound[] sounds;
 
-
-
     void Awake()
     {
         //loop through all sounds to be used in the scene
         foreach (Sound s in sounds)
-        {
-            
+        {            
             s.source = gameObject.AddComponent<AudioSource>();
             s.source.clip = s.clip;
             s.source.volume = s.volume;
             s.source.loop = s.loop;
             s.source.playOnAwake = s.playOnAwake;
-            s.source.outputAudioMixerGroup = s.audioMixer;
-            
-            Debug.Log(s.name);
+            s.source.outputAudioMixerGroup = s.audioMixer;            
         }
     }
 
@@ -42,16 +37,9 @@ public class AudioControl : MonoBehaviour
 
         if(s == null) // if name inputted is incorrect, do nothing
         {
-            Debug.Log(s.name + " not found");
-
-            return;
-
-            
+            return;            
         }
         s.source.Play();
-
-        Debug.Log(s.name + " played");
-
     }
 
 

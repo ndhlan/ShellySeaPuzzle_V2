@@ -10,7 +10,7 @@ public class PuzzleIntroControl : MonoBehaviour
     int puzzleIndex;
     Texture2D puzzle;
     string DYKText;
-    Sound DYKVoice;
+    string DYKVoiceName;
     private readonly float imageSize = 1080f;
 
     // Start is called before the first frame update
@@ -40,12 +40,14 @@ public class PuzzleIntroControl : MonoBehaviour
         DYKText = dykText.GetDYKText(puzzleIndex);
         GameObject.Find("DYKText").GetComponent<Text>().text = DYKText;
 
-        //default play Did You Know voice         
-        //FindObjectOfType<AudioControl>().Play("DYKVoice");
+
+        // play Did You Know voice
+        DYKVoiceName = "DYKVoice" + puzzleIndex;
+        FindObjectOfType<AudioControl>().Play(DYKVoiceName);
 
 
         //lower volume of background music
-        //FindObjectOfType<BackgroundMusicControl>().VolumeDown();
+        FindObjectOfType<BackgroundMusicControl>().VolumeDown();
 
     }
 
@@ -54,15 +56,15 @@ public class PuzzleIntroControl : MonoBehaviour
     {
 
         //find sound name "DYKVoice" from AudioControl and check if it's is playing
-        //if (FindObjectOfType<AudioControl>().FindSoundByName("DYKVoice").source.isPlaying)
-        //{
-        //    return;
-        //}
-        //else
-        //{
-        //    //if not, turn background music back to its original volume level
-        //    FindObjectOfType<BackgroundMusicControl>().VolumeBackToPreviousLevel();
-        //}
+        if (FindObjectOfType<AudioControl>().FindSoundByName(DYKVoiceName).source.isPlaying)
+        {
+            return;
+        }
+        else
+        {
+            //if not, turn background music back to its original volume level
+            FindObjectOfType<BackgroundMusicControl>().VolumeBackToPreviousLevel();
+        }
 
 
     }
