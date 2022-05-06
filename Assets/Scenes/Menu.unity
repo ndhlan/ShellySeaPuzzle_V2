@@ -5106,7 +5106,7 @@ MonoBehaviour:
     name: BackgroundMusic
     clip: {fileID: 8300000, guid: 0c3ec1595017d9e479875daa849d282d, type: 3}
     source: {fileID: 0}
-    volume: 0.4
+    volume: 0.2
     loop: 1
     playOnAwake: 0
     audioMixer: {fileID: -3529209797294750265, guid: 1e12bc97f50aca84bb3eefadf172c813, type: 2}
