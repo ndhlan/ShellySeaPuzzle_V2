@@ -5,8 +5,6 @@ using UnityEngine.Audio;
 
 public class TouchRotate : MonoBehaviour
 {
-    //[SerializeField] Transform puzzlePiece;
-    
 
    private void OnMouseDown()
     { // if not win or time's up, rotate 90 degree on each touch
