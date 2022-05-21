@@ -32,8 +32,8 @@ public class TutorialControl : MonoBehaviour
     private float currentTime = 0f;
     private float startingTime = 30f;
 
-    public static bool isWin;
-    public static bool isTimesup;
+    public static bool isWinTT;
+    public static bool isTimesupTT;
 
 
     void Start()
@@ -43,11 +43,11 @@ public class TutorialControl : MonoBehaviour
 
         //Set win status off
         winPanel.SetActive(false);
-        isWin = false;
+        isWinTT = false;
 
         //Set timesup status off
         timesupPanel.SetActive(false);
-        isTimesup = false;
+        isTimesupTT = false;
 
         //set current time
         currentTime = startingTime;
@@ -65,7 +65,7 @@ public class TutorialControl : MonoBehaviour
             // check win status        
             if (CheckWinStatus())
             {
-                isWin = true;
+                isWinTT = true;
 
                 WinDisplay();
             }
@@ -93,7 +93,7 @@ public class TutorialControl : MonoBehaviour
 
     void TimeCounter()
     {
-        if (!isWin)
+        if (!isWinTT)
         {
             if (currentTime > 0)
             {
@@ -103,7 +103,7 @@ public class TutorialControl : MonoBehaviour
             }
             else
             {//when time's up
-                isTimesup = true;
+                isTimesupTT = true;
 
                 TimesUpDisplay();
             }
