@@ -29,6 +29,13 @@ public class LoadSceneControl : MonoBehaviour
         SceneManager.LoadScene("4.PuzzlePlay");
     }
 
+    //load How to play page
+    public static void LoadHowToPlay()
+    {
+        SceneManager.LoadScene("5.HowToPlay");
+    }
+
+
     //load main menu page
     public static void LoadMenu()
     {

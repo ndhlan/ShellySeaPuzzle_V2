@@ -13,7 +13,7 @@ public class MainMenuSettings : MonoBehaviour
 
     private GameObject volumeMenu;
  
-    private GameObject instructionsMenu;
+    //private GameObject instructionsMenu;
 
     private GameObject creditsMenu;
 
@@ -38,7 +38,7 @@ public class MainMenuSettings : MonoBehaviour
     {
                 
         mainMenu = GameObject.Find("MainMenu");
-        instructionsMenu = GameObject.Find("InstructionsMenu");
+        //instructionsMenu = GameObject.Find("InstructionsMenu");
         volumeMenu = GameObject.Find("VolumeMenu");
         creditsMenu = GameObject.Find("CreditsMenu");
 
@@ -49,7 +49,7 @@ public class MainMenuSettings : MonoBehaviour
         creditsButton = GameObject.Find("CreditsButton").GetComponent<Button>();
 
 
-        instructionsBackButton = GameObject.Find("InstructionsMenu/BackButton").GetComponent<Button>();
+        //instructionsBackButton = GameObject.Find("InstructionsMenu/BackButton").GetComponent<Button>();
         volumeBackButton = GameObject.Find("VolumeMenu/BackButton").GetComponent<Button>();
         creditsBackButton = GameObject.Find("CreditsMenu/BackButton").GetComponent<Button>();         
 
@@ -68,7 +68,7 @@ public class MainMenuSettings : MonoBehaviour
         playButton.onClick.AddListener(PlayButtonOnClick);
 
         instructionsButton.onClick.AddListener(InstructionsButtonOnClick);        
-        instructionsBackButton.onClick.AddListener(InstructionsBackButtonOnClick);
+        //instructionsBackButton.onClick.AddListener(InstructionsBackButtonOnClick);
 
         volumeButton.onClick.AddListener(VolumeButtonOnClick);
         volumeBackButton.onClick.AddListener(VolumeBackButtonOnClick);
@@ -86,7 +86,7 @@ public class MainMenuSettings : MonoBehaviour
     {
         mainMenu.SetActive(true);
 
-        instructionsMenu.SetActive(false);
+        //instructionsMenu.SetActive(false);
         volumeMenu.SetActive(false);
         creditsMenu.SetActive(false);
     }
@@ -96,18 +96,18 @@ public class MainMenuSettings : MonoBehaviour
         volumeMenu.SetActive(true);
 
         mainMenu.SetActive(false);
-        instructionsMenu.SetActive(false);
+        //instructionsMenu.SetActive(false);
         creditsMenu.SetActive(false);
     }
 
-    void InstructionMenuDisplay()
-    {
-        instructionsMenu.SetActive(true);
+    //void InstructionMenuDisplay()
+    //{
+    //    instructionsMenu.SetActive(true);
 
-        mainMenu.SetActive(false);
-        volumeMenu.SetActive(false);
-        creditsMenu.SetActive(false);
-    }
+    //    mainMenu.SetActive(false);
+    //    volumeMenu.SetActive(false);
+    //    creditsMenu.SetActive(false);
+    //}
 
 
 
@@ -116,7 +116,7 @@ public class MainMenuSettings : MonoBehaviour
         creditsMenu.SetActive(true);
 
         mainMenu.SetActive(false);
-        instructionsMenu.SetActive(false);
+        //instructionsMenu.SetActive(false);
         volumeMenu.SetActive(false);
 
     }
@@ -136,24 +136,27 @@ public class MainMenuSettings : MonoBehaviour
     {
         FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        InstructionMenuDisplay();
+        LoadSceneControl.LoadHowToPlay();
 
-        FindObjectOfType<BackgroundMusicControl>().Pause();
 
-        FindObjectOfType<AudioControl>().Play("Instruction");
+        //InstructionMenuDisplay();
+
+        //FindObjectOfType<BackgroundMusicControl>().Pause();
+
+        //FindObjectOfType<AudioControl>().Play("Instruction");
     }
 
 
-    void InstructionsBackButtonOnClick()
-    {
-        FindObjectOfType<AudioControl>().Play("MouseClick");
+    //void InstructionsBackButtonOnClick()
+    //{
+    //    FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        MainMenuDisplay();
+    //    MainMenuDisplay();
 
-        FindObjectOfType<BackgroundMusicControl>().UnPause();
+    //    FindObjectOfType<BackgroundMusicControl>().UnPause();
 
-        FindObjectOfType<AudioControl>().Stop("Instruction");
-    }
+    //    FindObjectOfType<AudioControl>().Stop("Instruction");
+    //}
 
 
     void VolumeButtonOnClick()
