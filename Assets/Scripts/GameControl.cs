@@ -30,10 +30,32 @@ public class GameControl : MonoBehaviour
     private Button playAgainButton;
 
     [SerializeField]
+    private Button leaderboardButton;
+
+    [SerializeField]
     private Text timeCounterText;
 
     [SerializeField]
     private GameObject timeField;
+
+    [SerializeField]
+    private Text scoreText;
+
+    [SerializeField]
+    private Text finalScoreText;
+
+    [SerializeField]
+    private Text playerNameText;
+
+    [SerializeField]
+    private GameObject star1;
+
+    [SerializeField]
+    private GameObject star2;
+
+    [SerializeField]
+    private GameObject star3;
+
 
     private float currentTime = 0f;
     private float startingTime;
@@ -49,6 +71,13 @@ public class GameControl : MonoBehaviour
 
     public static bool isWin;
     public static bool isTimesup;
+
+    public Leaderboard leaderboard;
+
+    public PlayerManager playerManager;
+
+    string playerName;
+    int finalScore;
 
 
     // Start is called before the first frame update
@@ -86,8 +115,8 @@ public class GameControl : MonoBehaviour
         timesupPanel.SetActive(false);
         isTimesup = false;
 
-        ////Set guidance Text on
-        //guidanceText.SetActive(true);
+        ////Set leaderboard panel off
+        //leaderboardPanel.SetActive(false);
 
         //set current time
         currentTime = startingTime;
@@ -109,6 +138,10 @@ public class GameControl : MonoBehaviour
                 isWin = true;
 
                 WinDisplay();
+
+
+
+
 
                 // play GameWin sound effect
                 FindObjectOfType<AudioControl>().Play("GameWin");
@@ -168,9 +201,13 @@ public class GameControl : MonoBehaviour
         {
             if (currentTime > 0)
             {
+                //keeping time
                 timeCounterText.text = currentTime.ToString("00");
                 currentTime--;
                 Invoke("TimeCounter", 1.0f);
+
+                //keeping score
+                scoreText.text = (int.Parse(timeCounterText.text) * 2).ToString("00");
             }
             else
             {//when time's up
@@ -266,8 +303,20 @@ public class GameControl : MonoBehaviour
         EndGamePopUpDisplay();
 
         timesupPanel.SetActive(false);
+        //leaderboardPanel.SetActive(false);
 
         winPanel.SetActive(true);
+
+        finalScore = int.Parse(scoreText.text);
+
+        finalScoreText.text = finalScore.ToString("00");
+
+        SetStars();
+
+        leaderboardButton.onClick.AddListener(LeaderboardButtonOnClick);
+
+
+
     }
 
     void TimesUpDisplay()
@@ -275,6 +324,7 @@ public class GameControl : MonoBehaviour
         EndGamePopUpDisplay();
 
         winPanel.SetActive(false);
+        //leaderboardPanel.SetActive(false);
 
         timesupPanel.SetActive(true);        
 
@@ -284,15 +334,32 @@ public class GameControl : MonoBehaviour
 
     void EndGamePopUpDisplay()
     {
-        //guidanceText.SetActive(false);
         timesupPanel.SetActive(false);
         timeField.SetActive(false);
+        //leaderboardPanel.SetActive(false);
 
         endGamePopUp.SetActive(true);
 
         backButton.onClick.AddListener(BackButtonOnClick);
         playAgainButton.onClick.AddListener(PlayAgainButtonOnClick);
     }
+
+    //void LeaderboardPanelDisplay()
+    //{
+    //    endGamePopUp.SetActive(false);
+    //    timesupPanel.SetActive(false);
+    //    winPanel.SetActive(false);
+
+    //    leaderboardPanel.SetActive(true);
+
+    //    homeButton.onClick.AddListener(HomeButtonOnClick);
+
+    //    Debug.Log("leaderboard display");
+    //    Debug.Log(" end game " + endGamePopUp.activeInHierarchy);
+    //    Debug.Log("win " + winPanel.activeInHierarchy);
+    //    Debug.Log("leaderboard " + leaderboardPanel.activeInHierarchy);
+
+    //}
 
 
     void BackButtonOnClick()
@@ -308,6 +375,56 @@ public class GameControl : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);        
     }
+
+    void LeaderboardButtonOnClick()
+    {
+        FindObjectOfType<AudioControl>().Play("MouseClick");
+
+        //LeaderboardPanelDisplay();
+
+        StartCoroutine(SubmitScoreRoutine());
+
+        Debug.Log("leaderboardbuttononclick");
+
+        //display Leaderboard scene
+        LoadSceneControl.LoadLeaderboard();
+
+    }
+
+    IEnumerator SubmitScoreRoutine()
+    {
+        playerManager.SetPlayerName();
+
+        yield return leaderboard.SubmitScoreRoutine(finalScore);
+
+    }
+
+    void SetStars()
+    {
+        float maxScore = startingTime * 2;
+        
+        if(finalScore <= maxScore / 3)
+        {
+            star1.SetActive(true);
+            star2.SetActive(false);
+            star3.SetActive(false);
+        }
+        else if(finalScore <= maxScore / 2)
+        {
+            star1.SetActive(true);
+            star2.SetActive(true);
+            star3.SetActive(false);
+        }
+        else
+        {
+            star1.SetActive(true);
+            star2.SetActive(true);
+            star3.SetActive(true);
+
+        }
+
+    }
+
 
 
 

@@ -42,6 +42,13 @@ public class LoadSceneControl : MonoBehaviour
         SceneManager.LoadScene("Menu");
     }
 
+
+    //load leaderboard page
+    public static void LoadLeaderboard()
+    {
+        SceneManager.LoadScene("6.Leaderboard");
+    }
+
     //exit game
     public static void Quit()
     {
