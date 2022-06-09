@@ -66,6 +66,13 @@ public class GameControl : MonoBehaviour
 
     private readonly float imageSize = 1080f;
 
+    private int maxScore;
+    private readonly int maxScoreSize2 = 50;
+    private readonly int maxScoreSize3 = 80;
+    private readonly int maxScoreSize4 = 100;
+    private int tempScore;
+
+
     private int puzzleIndex;
     private int puzzleSize;
 
@@ -74,7 +81,7 @@ public class GameControl : MonoBehaviour
 
     public Leaderboard leaderboard;
 
-    public PlayerManager playerManager;
+    //public PlayerManager playerManager;
 
     string playerName;
     int finalScore;
@@ -102,7 +109,9 @@ public class GameControl : MonoBehaviour
         ThumbnailDisplay();
 
         //Set startingTime based on Puzzle size
-        SetStartingTime(puzzleSize);
+        SetStartingTimeAndMaxScore(puzzleSize);
+
+        tempScore = maxScore;
 
         //Set End game pop up off
         endGamePopUp.SetActive(false);
@@ -114,9 +123,6 @@ public class GameControl : MonoBehaviour
         //Set timesup status off
         timesupPanel.SetActive(false);
         isTimesup = false;
-
-        ////Set leaderboard panel off
-        //leaderboardPanel.SetActive(false);
 
         //set current time
         currentTime = startingTime;
@@ -138,10 +144,6 @@ public class GameControl : MonoBehaviour
                 isWin = true;
 
                 WinDisplay();
-
-
-
-
 
                 // play GameWin sound effect
                 FindObjectOfType<AudioControl>().Play("GameWin");
@@ -178,19 +180,22 @@ public class GameControl : MonoBehaviour
         return isRotationZCorrect;
     }
 
-    void SetStartingTime(int puzzleSize)
+    void SetStartingTimeAndMaxScore(int puzzleSize)
     {
         if (puzzleSize == 2)
         {
             startingTime = durationSize2;
+            maxScore = maxScoreSize2;
         }
         else if (puzzleSize == 3)
         {
             startingTime = durationSize3;
+            maxScore = maxScoreSize3;
         }
         else
         {
             startingTime = durationSize4;
+            maxScore = maxScoreSize4;
         }
     }
 
@@ -206,8 +211,8 @@ public class GameControl : MonoBehaviour
                 currentTime--;
                 Invoke("TimeCounter", 1.0f);
 
-                //keeping score
-                scoreText.text = (int.Parse(timeCounterText.text) * 2).ToString("00");
+                //keeping score                
+                scoreText.text = (tempScore -= 2).ToString("00");
             }
             else
             {//when time's up
@@ -227,15 +232,18 @@ public class GameControl : MonoBehaviour
                     FindObjectOfType<AudioControl>().Play("Timesup");
                 }
             }
-        }
-        
+        }        
         
     }
 
 
     void SplitPuzzleImage()
     {
-        Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+
+        //Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+        Texture2D imgTexture = Resources.Load<Texture2D>("PuzzleImages/Puzzle" + puzzleIndex);
+
+
         float pieceSize = imageSize / puzzleSize;
 
         for (int i = 0; i < puzzleSize; i++)
@@ -280,7 +288,9 @@ public class GameControl : MonoBehaviour
     void ThumbnailDisplay()
     {
         //Find puzzle based on puzzle index
-        Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+        //Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
+        Texture2D imgTexture = Resources.Load<Texture2D>("PuzzleImages/Puzzle" + puzzleIndex);
+
 
         //display puzzle to PuzzleField
         Sprite newSprite = Sprite.Create(imgTexture, new Rect(0, 0, imageSize, imageSize), new Vector2(0.5f, 0.5f));
@@ -303,7 +313,6 @@ public class GameControl : MonoBehaviour
         EndGamePopUpDisplay();
 
         timesupPanel.SetActive(false);
-        //leaderboardPanel.SetActive(false);
 
         winPanel.SetActive(true);
 
@@ -324,7 +333,6 @@ public class GameControl : MonoBehaviour
         EndGamePopUpDisplay();
 
         winPanel.SetActive(false);
-        //leaderboardPanel.SetActive(false);
 
         timesupPanel.SetActive(true);        
 
@@ -336,30 +344,12 @@ public class GameControl : MonoBehaviour
     {
         timesupPanel.SetActive(false);
         timeField.SetActive(false);
-        //leaderboardPanel.SetActive(false);
 
         endGamePopUp.SetActive(true);
 
         backButton.onClick.AddListener(BackButtonOnClick);
         playAgainButton.onClick.AddListener(PlayAgainButtonOnClick);
     }
-
-    //void LeaderboardPanelDisplay()
-    //{
-    //    endGamePopUp.SetActive(false);
-    //    timesupPanel.SetActive(false);
-    //    winPanel.SetActive(false);
-
-    //    leaderboardPanel.SetActive(true);
-
-    //    homeButton.onClick.AddListener(HomeButtonOnClick);
-
-    //    Debug.Log("leaderboard display");
-    //    Debug.Log(" end game " + endGamePopUp.activeInHierarchy);
-    //    Debug.Log("win " + winPanel.activeInHierarchy);
-    //    Debug.Log("leaderboard " + leaderboardPanel.activeInHierarchy);
-
-    //}
 
 
     void BackButtonOnClick()
@@ -380,11 +370,7 @@ public class GameControl : MonoBehaviour
     {
         FindObjectOfType<AudioControl>().Play("MouseClick");
 
-        //LeaderboardPanelDisplay();
-
         StartCoroutine(SubmitScoreRoutine());
-
-        Debug.Log("leaderboardbuttononclick");
 
         //display Leaderboard scene
         LoadSceneControl.LoadLeaderboard();
@@ -393,23 +379,18 @@ public class GameControl : MonoBehaviour
 
     IEnumerator SubmitScoreRoutine()
     {
-        playerManager.SetPlayerName();
-
         yield return leaderboard.SubmitScoreRoutine(finalScore);
-
     }
 
     void SetStars()
-    {
-        float maxScore = startingTime * 2;
-        
-        if(finalScore <= maxScore / 3)
+    {       
+        if(finalScore <= maxScore * 0.7)
         {
             star1.SetActive(true);
             star2.SetActive(false);
             star3.SetActive(false);
         }
-        else if(finalScore <= maxScore / 2)
+        else if(finalScore <= maxScore * 0.9)
         {
             star1.SetActive(true);
             star2.SetActive(true);

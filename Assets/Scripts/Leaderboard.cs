@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class Leaderboard : MonoBehaviour
 {
 
-    int leaderboardID = 3304;
+    int leaderboardID = 3303;
     public Text playerNames;
     public Text playerScores;
     // Start is called before the first frame update

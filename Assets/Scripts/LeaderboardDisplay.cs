@@ -8,7 +8,7 @@ public class LeaderboardDisplay : MonoBehaviour
     public Leaderboard leaderboard;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         StartCoroutine(DisplayLeaderboard());
     }

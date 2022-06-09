@@ -20,7 +20,8 @@ public class PuzzleIntroControl : MonoBehaviour
         puzzleIndex = PlayerPrefs.GetInt("PuzzleIndex", 1);
 
         //Find puzzle based on puzzle index
-        puzzle = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex+".png", typeof(Texture2D));
+        //puzzle = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex+".png", typeof(Texture2D));
+        puzzle = Resources.Load<Texture2D>("PuzzleImages/Puzzle" + puzzleIndex);
 
         //display puzzle to PuzzleField
         Sprite newSprite = Sprite.Create(puzzle, new Rect(0, 0, imageSize, imageSize), new Vector2(0.5f, 0.5f));
