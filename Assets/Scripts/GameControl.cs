@@ -239,10 +239,8 @@ public class GameControl : MonoBehaviour
 
     void SplitPuzzleImage()
     {
-
         //Texture2D imgTexture = (Texture2D)UnityEditor.AssetDatabase.LoadAssetAtPath("Assets/PuzzleImages/Puzzle" + puzzleIndex + ".png", typeof(Texture2D));
         Texture2D imgTexture = Resources.Load<Texture2D>("PuzzleImages/Puzzle" + puzzleIndex);
-
 
         float pieceSize = imageSize / puzzleSize;
 
@@ -323,9 +321,6 @@ public class GameControl : MonoBehaviour
         SetStars();
 
         leaderboardButton.onClick.AddListener(LeaderboardButtonOnClick);
-
-
-
     }
 
     void TimesUpDisplay()
@@ -374,7 +369,6 @@ public class GameControl : MonoBehaviour
 
         //display Leaderboard scene
         LoadSceneControl.LoadLeaderboard();
-
     }
 
     IEnumerator SubmitScoreRoutine()
@@ -384,13 +378,13 @@ public class GameControl : MonoBehaviour
 
     void SetStars()
     {       
-        if(finalScore <= maxScore * 0.7)
+        if(finalScore <= maxScore * 0.5)
         {
             star1.SetActive(true);
             star2.SetActive(false);
             star3.SetActive(false);
         }
-        else if(finalScore <= maxScore * 0.9)
+        else if(finalScore <= maxScore * 0.75)
         {
             star1.SetActive(true);
             star2.SetActive(true);
@@ -401,7 +395,6 @@ public class GameControl : MonoBehaviour
             star1.SetActive(true);
             star2.SetActive(true);
             star3.SetActive(true);
-
         }
 
     }

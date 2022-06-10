@@ -22,9 +22,13 @@ public class DidYouKnowText
     readonly string DYKText16 = "";
     readonly string DYKText17 = "";
     readonly string DYKText18 = "";
+    //ADD NEW DYKTEXT STRING HERE
+
 
     public string GetDYKText(int index)
     {
+        //ADD NEW DYKTEXT STRING TO THE ARRAY HERE
+
         string[] DYKList = new string[18] { DYKText1, 
                                             DYKText2, 
                                             DYKText3, 
