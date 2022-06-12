@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class DidYouKnowText
 {
-    readonly string DYKText1 = "That six plastic bottles go into making one Shore Buddy.";
-    readonly string DYKText2 = "That the life span of a sea turtle is 50-100 years.";
-    readonly string DYKText3 = "That the Pacific Ocean has the most trash.";
-    readonly string DYKText4 = "That it takes 450 years to take a bottle of plastic to degrade into the ocean.";
-    readonly string DYKText5 = "That 200,000 tons of plastic straws flow into our oceans each year.";
-    readonly string DYKText6 = "That 31,000 balloons enter the oceans around the U.S. each year.";
-    readonly string DYKText7 = "More than 700 different species of marine animals have been found with ingested plastic.";
+    readonly string DYKText1 = "Six plastic bottles go into making one Shore Buddy.";
+    readonly string DYKText2 = "It takes six recycled plastic bottles to make one Shore Buddies Stuffed Animal.";
+    readonly string DYKText3 = "The bottles get sent to a recycling facility.";
+    readonly string DYKText4 = "The bottles get shredded and turned into plastic pellets.";
+    readonly string DYKText5 = "The pellets are melted and turned into yarn.";
+    readonly string DYKText6 = "The upcycled plastic yarn is used to make the fluff inside stuffing and the soft outside of each Shore Buddy";
+    readonly string DYKText7 = "By 2019 Shore Buddies saved over 300,000 plastic bottles from entering our oceans.";
     readonly string DYKText8 = "Single use plastic bags take 1,000 years to decompose.";
     readonly string DYKText9 = "When plastic is not recycled, it makes its way into the ocean, harming and endangering marine animals.";
     readonly string DYKText10 = "The sun and wave break plastic into pieces, which are then eaten by many fish species.";
     readonly string DYKText11 = "Each person uses around 300 toothbrushes during their lifetime, adding 175 feet of plastic to the environment.";
-    readonly string DYKText12 = "";
-    readonly string DYKText13 = "";
-    readonly string DYKText14 = "";
-    readonly string DYKText15 = "";
-    readonly string DYKText16 = "";
-    readonly string DYKText17 = "";
-    readonly string DYKText18 = "";
+    readonly string DYKText12 = "200,000 tons of plastic straws flow into our oceans each year.";
+    readonly string DYKText13 = "The life span of a sea turtle is 50-100 years.";
+    readonly string DYKText14 = "More than 700 different species of marine animals have been found with ingested plastic.";
+    readonly string DYKText15 = "31,000 balloons enter the oceans around the U.S. each year.";
+    readonly string DYKText16 = "It takes 450 years to take a bottle of plastic to degrade into the ocean.";
+    readonly string DYKText17 = "The Pacific Ocean has the most trash.";
+    readonly string DYKText18 = "One million marine animals die each year in the world as a result of ingesting plastic.";
     //ADD NEW DYKTEXT STRING HERE
 
 
