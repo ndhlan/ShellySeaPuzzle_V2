@@ -6,8 +6,8 @@ public class DidYouKnowText
 {
     readonly string DYKText1 = "Six plastic bottles go into making one Shore Buddy.";
     readonly string DYKText2 = "It takes six recycled plastic bottles to make one Shore Buddies Stuffed Animal.";
-    readonly string DYKText3 = "The bottles get sent to a recycling facility.";
-    readonly string DYKText4 = "The bottles get shredded and turned into plastic pellets.";
+    readonly string DYKText3 = "The recycled plastic bottles get sent to a recycling facility.";
+    readonly string DYKText4 = "The recycled plastic bottles get shredded and turned into plastic pellets.";
     readonly string DYKText5 = "The pellets are melted and turned into yarn.";
     readonly string DYKText6 = "The upcycled plastic yarn is used to make the fluff inside stuffing and the soft outside of each Shore Buddy";
     readonly string DYKText7 = "By 2019 Shore Buddies saved over 300,000 plastic bottles from entering our oceans.";
