@@ -1137,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.size
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[0].clip
@@ -1166,14 +1166,14 @@ PrefabInstance:
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 23d1539763e2169409971b5715dda575, type: 3}
+      objectReference: {fileID: 8300000, guid: 328ee6d7903f57c4692c0506536626cc, type: 3}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].name
-      value: GameWin
+      value: Timesup
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[3].clip

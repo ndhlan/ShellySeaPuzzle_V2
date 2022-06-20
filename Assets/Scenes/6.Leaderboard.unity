@@ -566,43 +566,43 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.size
-      value: 4
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[0].clip
       value: 
-      objectReference: {fileID: 8300000, guid: e2a54bdf4d1bc0e4384195af318812d5, type: 3}
+      objectReference: {fileID: 8300000, guid: 6fc855ddc9717e7418320a1d18e1926f, type: 3}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[0].loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[0].name
-      value: Rotate
+      value: MouseClick
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 6fc855ddc9717e7418320a1d18e1926f, type: 3}
+      objectReference: {fileID: 8300000, guid: 328ee6d7903f57c4692c0506536626cc, type: 3}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[1].loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[1].name
-      value: MouseClick
+      value: Timesup
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 23d1539763e2169409971b5715dda575, type: 3}
+      objectReference: {fileID: 8300000, guid: 328ee6d7903f57c4692c0506536626cc, type: 3}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].loop
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[2].name
-      value: GameWin
+      value: Timesup
       objectReference: {fileID: 0}
     - target: {fileID: 6872779520290206157, guid: 2b79b6fec5fb5424182a55d0aaa4c45e, type: 3}
       propertyPath: sounds.Array.data[3].clip
@@ -747,7 +747,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.5
+    m_LineSpacing: 1.25
   m_Text: 
 --- !u!222 &674808017
 CanvasRenderer:
@@ -1011,7 +1011,7 @@ MonoBehaviour:
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1.5
+    m_LineSpacing: 1.25
   m_Text: 
 --- !u!222 &853124024
 CanvasRenderer:
